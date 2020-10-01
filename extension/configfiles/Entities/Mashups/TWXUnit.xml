@@ -1,0 +1,1028 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities>
+	<Mashups>
+		<Mashup
+				aspect.isFlex="true"
+				aspect.isEditableExtensionObject="true"
+				aspect.isResponsive="true"
+				aspect.mashupType="mashup"
+				columns="0.0"
+				description=""
+				documentationContent=""
+				homeMashup=""
+         		lastModifiedDate="2020-08-17T17:03:40.586+02:00"
+				name="TWXUnit"
+				projectName="TWX_Unit"
+				rows="0.0"
+				tags="TWX_Unit:Core">
+			<avatar></avatar>
+			<DesignTimePermissions>
+				<Create></Create>
+				<Read></Read>
+				<Update></Update>
+				<Delete></Delete>
+				<Metadata></Metadata>
+			</DesignTimePermissions>
+			<RunTimePermissions></RunTimePermissions>
+			<VisibilityPermissions>
+				<Visibility></Visibility>
+			</VisibilityPermissions>
+			<ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+			<ConfigurationTables></ConfigurationTables>
+			<ParameterDefinitions></ParameterDefinitions>
+			<Things>
+				<Thing>TwxUnit</Thing>
+			</Things>
+			<ThingShapes></ThingShapes>
+			<ThingTemplates></ThingTemplates>
+			<mashupContent>
+				<![CDATA[
+            {
+              "CustomMashupCss" : "",
+              "Data" : {
+                "Session" : {
+                  "DataName" : "Session",
+                  "EntityName" : "",
+                  "EntityType" : "Session",
+                  "Id" : "session",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "SessionInterface",
+                    "Name" : "GetGlobalSessionValues",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "GetGlobalSessionValues"
+                  } ]
+                },
+                "Things_TwxUnit" : {
+                  "DataName" : "Things_TwxUnit",
+                  "EntityName" : "TwxUnit",
+                  "EntityType" : "Things",
+                  "Id" : "078b368f-a950-4e95-abcf-3fce404c24e9",
+                  "Services" : [ {
+                    "APIMethod" : "get",
+                    "Characteristic" : "Services",
+                    "Id" : "e0f31ba7-bf35-476e-a13c-67c55d0bcdc5",
+                    "Name" : "GetProperties",
+                    "Parameters" : {
+                      "useWebsockets" : true
+                    },
+                    "RefreshInterval" : 0,
+                    "Target" : "GetProperties"
+                  }, {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "7fec05d1-9f19-49c0-845c-0a8954479dc6",
+                    "Name" : "Run",
+                    "Parameters" : {
+                      "async" : false
+                    },
+                    "RefreshInterval" : 0,
+                    "Target" : "Run"
+                  }, {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "bc2b9df1-6360-4e23-bacc-43312a396d06",
+                    "Name" : "QueryTestSuites",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "QueryTestSuites"
+                  }, {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "8025776d-aace-474f-8c2b-c4dcd5038002",
+                    "Name" : "QueryProjects",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "QueryProjects"
+                  } ]
+                },
+                "UserExtensions" : {
+                  "DataName" : "UserExtensions",
+                  "EntityName" : "",
+                  "EntityType" : "UserExtensions",
+                  "Id" : "UserExtensions",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "UserExtensionInterface",
+                    "Name" : "GetCurrentUserExtensionProperties",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "GetCurrentUserExtensionProperties"
+                  } ]
+                }
+              },
+              "DataBindings" : [ {
+                "Id" : "905f2363-ad3c-40d5-b70b-62d79aae467a",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "",
+                  "SourcePropertyBaseType" : "INFOTABLE",
+                  "SourcePropertyType" : "InfoTable",
+                  "TargetProperty" : "Data",
+                  "TargetPropertyBaseType" : "INFOTABLE",
+                  "TargetPropertyType" : "property"
+                } ],
+                "SourceArea" : "Data",
+                "SourceDetails" : "AllData",
+                "SourceId" : "QueryTestSuites",
+                "SourceSection" : "Things_TwxUnit",
+                "TargetArea" : "UI",
+                "TargetId" : "dhxlist-16",
+                "TargetSection" : ""
+              }, {
+                "Id" : "ce9a619f-6ee4-48dc-ae1a-3baa2881439e",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "name",
+                  "SourcePropertyBaseType" : "STRING",
+                  "SourcePropertyType" : "Field",
+                  "TargetProperty" : "Text",
+                  "TargetPropertyBaseType" : "STRING",
+                  "TargetPropertyType" : "property"
+                } ],
+                "SourceArea" : "Data",
+                "SourceDetails" : "SelectedRows",
+                "SourceId" : "QueryTestSuites",
+                "SourceSection" : "Things_TwxUnit",
+                "TargetArea" : "UI",
+                "TargetId" : "label-18",
+                "TargetSection" : ""
+              }, {
+                "Id" : "8ec425b8-f781-4151-9f35-ba89501fbe67",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "name",
+                  "SourcePropertyBaseType" : "STRING",
+                  "TargetProperty" : "testSuite",
+                  "TargetPropertyBaseType" : "THINGNAME",
+                  "TargetPropertyType" : "Parameter"
+                } ],
+                "SourceArea" : "Data",
+                "SourceDetails" : "SelectedRows",
+                "SourceId" : "QueryTestSuites",
+                "SourceSection" : "Things_TwxUnit",
+                "TargetArea" : "Data",
+                "TargetId" : "Run",
+                "TargetSection" : "Things_TwxUnit"
+              }, {
+                "Id" : "11314ee8-8ac2-4590-b517-2bce8c7cc430",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "execution",
+                  "SourcePropertyBaseType" : "INFOTABLE",
+                  "SourcePropertyType" : "Property",
+                  "TargetProperty" : "Data",
+                  "TargetPropertyBaseType" : "INFOTABLE",
+                  "TargetPropertyType" : "property"
+                } ],
+                "SourceArea" : "Data",
+                "SourceDetails" : "AllData",
+                "SourceId" : "GetProperties",
+                "SourceSection" : "Things_TwxUnit",
+                "TargetArea" : "UI",
+                "TargetId" : "dhxgrid-22",
+                "TargetSection" : ""
+              }, {
+                "Id" : "d8719e2d-2cbf-4700-b6ff-d2f05bc44591",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "",
+                  "SourcePropertyBaseType" : "INFOTABLE",
+                  "SourcePropertyType" : "InfoTable",
+                  "TargetProperty" : "Data",
+                  "TargetPropertyBaseType" : "INFOTABLE",
+                  "TargetPropertyType" : "property"
+                } ],
+                "SourceArea" : "Data",
+                "SourceDetails" : "AllData",
+                "SourceId" : "QueryProjects",
+                "SourceSection" : "Things_TwxUnit",
+                "TargetArea" : "UI",
+                "TargetId" : "dhxlist-33",
+                "TargetSection" : ""
+              }, {
+                "Id" : "47e1eb21-17ac-45d3-a6f3-f7238b42b30d",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "name",
+                  "SourcePropertyBaseType" : "STRING",
+                  "TargetProperty" : "ProjectName",
+                  "TargetPropertyBaseType" : "STRING",
+                  "TargetPropertyType" : "Parameter"
+                } ],
+                "SourceArea" : "Data",
+                "SourceDetails" : "SelectedRows",
+                "SourceId" : "QueryProjects",
+                "SourceSection" : "Things_TwxUnit",
+                "TargetArea" : "Data",
+                "TargetId" : "QueryTestSuites",
+                "TargetSection" : "Things_TwxUnit"
+              } ],
+              "DesignTimePermissions" : {
+                "Create" : [ ],
+                "Delete" : [ ],
+                "Metadata" : [ ],
+                "Read" : [ ],
+                "Update" : [ ]
+              },
+              "Events" : [ {
+                "EventHandlerArea" : "Data",
+                "EventHandlerId" : "Things_TwxUnit",
+                "EventHandlerService" : "GetProperties",
+                "EventTriggerArea" : "Mashup",
+                "EventTriggerEvent" : "Loaded",
+                "EventTriggerId" : "mashup-root",
+                "EventTriggerSection" : "",
+                "Id" : "cf31c46e-191a-46c2-bdf5-34fc0689af74"
+              }, {
+                "EventHandlerArea" : "Data",
+                "EventHandlerId" : "Things_TwxUnit",
+                "EventHandlerService" : "QueryTestSuites",
+                "EventTriggerArea" : "Mashup",
+                "EventTriggerEvent" : "Loaded",
+                "EventTriggerId" : "mashup-root",
+                "EventTriggerSection" : "",
+                "Id" : "aae174f3-fff5-437a-b847-3d7cb26d5241"
+              }, {
+                "EventHandlerArea" : "Data",
+                "EventHandlerId" : "Things_TwxUnit",
+                "EventHandlerService" : "Run",
+                "EventTriggerArea" : "UI",
+                "EventTriggerEvent" : "Clicked",
+                "EventTriggerId" : "button-20",
+                "EventTriggerSection" : "",
+                "Id" : "b2e716b4-8ca4-4e04-9931-3a32522d1047"
+              }, {
+                "EventHandlerArea" : "Data",
+                "EventHandlerId" : "Things_TwxUnit",
+                "EventHandlerService" : "Run",
+                "EventTriggerArea" : "UI",
+                "EventTriggerEvent" : "DoubleClicked",
+                "EventTriggerId" : "dhxlist-16",
+                "EventTriggerSection" : "",
+                "Id" : "95f8c318-555d-406a-953d-b0b8100af4bb"
+              }, {
+                "EventHandlerArea" : "Data",
+                "EventHandlerId" : "Things_TwxUnit",
+                "EventHandlerService" : "GetProperties",
+                "EventTriggerArea" : "Data",
+                "EventTriggerEvent" : "ServiceInvokeCompleted",
+                "EventTriggerId" : "Run",
+                "EventTriggerSection" : "Things_TwxUnit",
+                "Id" : "415980d6-92f4-4d5a-a81e-12704fd1976c"
+              }, {
+                "EventHandlerArea" : "Data",
+                "EventHandlerId" : "Things_TwxUnit",
+                "EventHandlerService" : "QueryProjects",
+                "EventTriggerArea" : "Mashup",
+                "EventTriggerEvent" : "Loaded",
+                "EventTriggerId" : "mashup-root",
+                "EventTriggerSection" : "",
+                "Id" : "66e845a2-6696-4415-b05a-a2502cb93e44"
+              }, {
+                "EventHandlerArea" : "Data",
+                "EventHandlerId" : "Things_TwxUnit",
+                "EventHandlerService" : "QueryTestSuites",
+                "EventTriggerArea" : "Data",
+                "EventTriggerEvent" : "SelectedRowsChanged",
+                "EventTriggerId" : "QueryProjects",
+                "EventTriggerSection" : "Things_TwxUnit",
+                "Id" : "961b4a17-1229-45ec-8ac4-69506f2f292f"
+              } ],
+              "RunTimePermissions" : {
+                "permissions" : [ ]
+              },
+              "UI" : {
+                "Properties" : {
+                  "AddToDashboardButton" : "SimplePlus",
+                  "AddToDashboardButtonStyle" : "DefaultAddToDashboardButtonStyle",
+                  "Area" : "Mashup",
+                  "BGImage" : "",
+                  "BGImageRepeat" : "no-repeat",
+                  "BGImageSize" : "auto",
+                  "Columns" : 0,
+                  "ConfigureGadgetButton" : "SimpleGear",
+                  "ConfigureGadgetButtonStyle" : "DefaultConfigureGadgetButtonStyle",
+                  "DisplayName" : "Mashup",
+                  "EnableParameterEditing" : false,
+                  "Height" : 618,
+                  "Id" : "mashup-root",
+                  "IgnoreWarningsInViewMashup" : false,
+                  "IsPrintLayout" : false,
+                  "Left" : 0,
+                  "MashupToEditGadget" : "DefaultMashupToEditGadget",
+                  "MinHeight" : 0,
+                  "MinWidth" : 0,
+                  "ResponsiveLayout" : true,
+                  "Rows" : 0,
+                  "ShowDataLoading" : true,
+                  "Style" : "DefaultMashupStyle",
+                  "StyleTheme" : "Base Theme",
+                  "Title" : "",
+                  "TitleBar" : false,
+                  "TitleBarStyle" : "DefaultTitleBarStyle",
+                  "TitleBarText" : "Gadget Title Here",
+                  "Top" : 0,
+                  "Type" : "mashup",
+                  "UseTheme" : false,
+                  "UseThemeForHybrids" : false,
+                  "Visible" : true,
+                  "Width" : 1024,
+                  "Z-index" : 10,
+                  "__TypeDisplayName" : "Mashup",
+                  "flex-grow" : 0,
+                  "id_index" : 33,
+                  "supportsAutoResize" : true
+                },
+                "Widgets" : [ {
+                  "Properties" : {
+                    "Area" : "UI",
+                    "DisplayName" : "flexcontainer-2",
+                    "Id" : "flexcontainer-2",
+                    "ResponsiveLayout" : true,
+                    "ShowDataLoading" : true,
+                    "Style" : "DefaultContainerStyle",
+                    "Type" : "flexcontainer",
+                    "UseTheme" : false,
+                    "Visible" : true,
+                    "Z-index" : 10,
+                    "__TypeDisplayName" : "Flex Container",
+                    "align-content" : "flex-start",
+                    "align-items" : "flex-start",
+                    "flex-basis" : "auto",
+                    "flex-direction" : "column",
+                    "flex-grow" : 1,
+                    "flex-height" : 0,
+                    "flex-shrink" : 0,
+                    "flex-width" : 0,
+                    "flex-wrap" : "nowrap",
+                    "iconClass" : "widgets-flexcontainer",
+                    "justify-content" : "flex-start",
+                    "userCannotRemove" : true
+                  },
+                  "Widgets" : [ {
+                    "Properties" : {
+                      "Area" : "UI",
+                      "DisplayName" : "Header",
+                      "Id" : "flexcontainer-4",
+                      "ResponsiveLayout" : true,
+                      "ShowDataLoading" : true,
+                      "Style" : "TWXUnit.Title",
+                      "Type" : "flexcontainer",
+                      "UseTheme" : false,
+                      "Visible" : true,
+                      "Z-index" : 10,
+                      "__TypeDisplayName" : "Flex Container",
+                      "align-content" : "flex-start",
+                      "align-items" : "flex-start",
+                      "flex-basis" : "auto",
+                      "flex-direction" : "row",
+                      "flex-grow" : 1,
+                      "flex-height" : 42,
+                      "flex-shrink" : 1,
+                      "flex-width" : 0,
+                      "flex-wrap" : "nowrap",
+                      "iconClass" : "widgets-flexcontainer-fixed",
+                      "isLocked" : false,
+                      "justify-content" : "flex-start",
+                      "userCannotRemove" : false
+                    },
+                    "Widgets" : [ {
+                      "Properties" : {
+                        "Alignment" : "left",
+                        "AllowEllipsis" : false,
+                        "Area" : "UI",
+                        "DisplayName" : "label-5",
+                        "Height" : 22,
+                        "Id" : "label-5",
+                        "Left" : 240,
+                        "Margin" : "5",
+                        "ResponsiveLayout" : false,
+                        "ShowDataLoading" : true,
+                        "Style" : "TWXUnit.Title",
+                        "Text" : "Unit Testing ",
+                        "ToolTipField" : "",
+                        "ToolTipStyle" : "DefaultTooltipStyle",
+                        "Top" : 25,
+                        "Type" : "label",
+                        "Visible" : true,
+                        "Width" : 160,
+                        "Z-index" : 10,
+                        "__TypeDisplayName" : "Label",
+                        "__supportsTooltip" : true
+                      },
+                      "Widgets" : [ ]
+                    } ]
+                  }, {
+                    "Properties" : {
+                      "Area" : "UI",
+                      "DisplayName" : "Body",
+                      "Id" : "flexcontainer-3",
+                      "ResponsiveLayout" : true,
+                      "ShowDataLoading" : true,
+                      "Style" : "DefaultContainerStyle",
+                      "Type" : "flexcontainer",
+                      "UseTheme" : false,
+                      "Visible" : true,
+                      "Z-index" : 10,
+                      "__TypeDisplayName" : "Flex Container",
+                      "align-content" : "flex-start",
+                      "align-items" : "flex-start",
+                      "flex-basis" : "auto",
+                      "flex-direction" : "row",
+                      "flex-grow" : 1,
+                      "flex-height" : 0,
+                      "flex-shrink" : 0,
+                      "flex-width" : 0,
+                      "flex-wrap" : "nowrap",
+                      "iconClass" : "widgets-flexcontainer",
+                      "isLocked" : true,
+                      "justify-content" : "flex-start",
+                      "userCannotRemove" : false
+                    },
+                    "Widgets" : [ {
+                      "Properties" : {
+                        "Area" : "UI",
+                        "DisplayName" : "container-7",
+                        "Id" : "flexcontainer-7",
+                        "ResponsiveLayout" : true,
+                        "ShowDataLoading" : true,
+                        "Style" : "DefaultContainerStyle",
+                        "Type" : "flexcontainer",
+                        "UseTheme" : false,
+                        "Visible" : true,
+                        "Z-index" : 10,
+                        "__TypeDisplayName" : "Responsive Container",
+                        "align-content" : "flex-start",
+                        "align-items" : "flex-start",
+                        "flex-basis" : "auto",
+                        "flex-direction" : "column",
+                        "flex-grow" : 1,
+                        "flex-height" : 0,
+                        "flex-shrink" : 1,
+                        "flex-width" : 193,
+                        "flex-wrap" : "nowrap",
+                        "iconClass" : "widgets-flexcontainer-fixed",
+                        "isLocked" : false,
+                        "justify-content" : "flex-start",
+                        "userCannotRemove" : false
+                      },
+                      "Widgets" : [ {
+                        "Properties" : {
+                          "Area" : "UI",
+                          "DisplayName" : "container-30",
+                          "Id" : "flexcontainer-30",
+                          "ResponsiveLayout" : true,
+                          "ShowDataLoading" : true,
+                          "Style" : "DefaultContainerStyle",
+                          "Type" : "flexcontainer",
+                          "UseTheme" : false,
+                          "Visible" : true,
+                          "Z-index" : 10,
+                          "__TypeDisplayName" : "Responsive Container",
+                          "align-content" : "flex-start",
+                          "align-items" : "flex-start",
+                          "flex-basis" : "auto",
+                          "flex-direction" : "row",
+                          "flex-grow" : 0,
+                          "flex-height" : 44,
+                          "flex-shrink" : 0,
+                          "flex-width" : 0,
+                          "flex-wrap" : "nowrap",
+                          "iconClass" : "widgets-flexcontainer-fixed",
+                          "isLocked" : false,
+                          "justify-content" : "flex-start",
+                          "userCannotRemove" : false
+                        },
+                        "Widgets" : [ {
+                          "Properties" : {
+                            "Alignment" : "left",
+                            "Area" : "UI",
+                            "AutoSelectFirstRow" : false,
+                            "ClearIfNoSelection" : false,
+                            "ComboDropdownButtonStyle" : "DefaultComboDropdownButtonStyle",
+                            "ComboEnableCheckbox" : false,
+                            "ComboItemHighlightedStyle" : "DefaultComboItemHighlightedStyle",
+                            "ComboTextboxStyle" : "DefaultComboTextboxStyle",
+                            "DisableSelectedStyle" : false,
+                            "DisplayField" : "name",
+                            "DisplayName" : "dhxlist-33",
+                            "DropdownButtonStyle" : "DefaultDropdownButtonStyle",
+                            "DropdownSelectedStyle" : "DefaultDropdownSelectedStyle",
+                            "DropdownStyle" : "DefaultDropdownStyle",
+                            "EnableKeyboardSelections" : true,
+                            "EnableToolTips" : true,
+                            "Height" : 28,
+                            "HeightOfDropdownView" : 170,
+                            "Id" : "dhxlist-33",
+                            "Label" : "Project",
+                            "LabelAlignment" : "left",
+                            "Left" : 10,
+                            "ListBackgroundStyle" : "DefaultListBackgroundStyle",
+                            "ListFocusStyle" : "DefaultFocusStyle",
+                            "ListItemAlternateStyle" : "DefaultListItemAlternateStyle",
+                            "ListItemHoverStyle" : "DefaultListItemHoverStyle",
+                            "ListItemSelectedStyle" : "DefaultListItemSelectedStyle",
+                            "ListItemStyle" : "DefaultListItemStyle",
+                            "ListLabelStyle" : "DefaultWidgetLabelStyle",
+                            "MultiSelect" : false,
+                            "NumberOfItemsInDropdownView" : 10,
+                            "NumberOfItemsPerPage" : 500,
+                            "ResponsiveLayout" : true,
+                            "RowHeight" : 28,
+                            "ShowDataLoading" : true,
+                            "SingleClickSelectOnTablets" : false,
+                            "TabSequence" : 0,
+                            "TextIfNoSelectionType" : "editable",
+                            "TextVerticalAlignment" : 28,
+                            "ToolTipStyle" : "DefaultTooltipStyle",
+                            "Top" : 10.000009179115295,
+                            "Type" : "dhxlist",
+                            "ValueField" : "name",
+                            "View" : "dropdown",
+                            "Visible" : true,
+                            "Width" : 240,
+                            "WidthOfDropdownView" : 220,
+                            "Z-index" : 10,
+                            "__TypeDisplayName" : "List",
+                            "__supportsLabel" : true,
+                            "__supportsTooltip" : true
+                          },
+                          "Widgets" : [ ]
+                        } ]
+                      }, {
+                        "Properties" : {
+                          "Area" : "UI",
+                          "DisplayName" : "container-29",
+                          "Id" : "flexcontainer-29",
+                          "ResponsiveLayout" : true,
+                          "ShowDataLoading" : true,
+                          "Style" : "DefaultContainerStyle",
+                          "Type" : "flexcontainer",
+                          "UseTheme" : false,
+                          "Visible" : true,
+                          "Z-index" : 10,
+                          "__TypeDisplayName" : "Responsive Container",
+                          "align-content" : "flex-start",
+                          "align-items" : "flex-start",
+                          "flex-basis" : "auto",
+                          "flex-direction" : "row",
+                          "flex-grow" : 1,
+                          "flex-height" : 800,
+                          "flex-shrink" : 1,
+                          "flex-width" : 0,
+                          "flex-wrap" : "nowrap",
+                          "iconClass" : "widgets-flexcontainer-fixed",
+                          "isLocked" : false,
+                          "justify-content" : "flex-start",
+                          "userCannotRemove" : false
+                        },
+                        "Widgets" : [ {
+                          "Properties" : {
+                          "Alignment" : "left",
+                          "Area" : "UI",
+                          "AutoSelectFirstRow" : false,
+                          "ClearIfNoSelection" : false,
+                          "ComboDropdownButtonStyle" : "DefaultComboDropdownButtonStyle",
+                          "ComboEnableCheckbox" : false,
+                          "ComboItemHighlightedStyle" : "DefaultComboItemHighlightedStyle",
+                          "ComboTextboxStyle" : "DefaultComboTextboxStyle",
+                          "DisableSelectedStyle" : false,
+                          "DisplayField" : "name",
+                          "DisplayName" : "dhxlist-16",
+                          "DropdownButtonStyle" : "DefaultDropdownButtonStyle",
+                          "DropdownSelectedStyle" : "DefaultDropdownSelectedStyle",
+                          "DropdownStyle" : "DefaultDropdownStyle",
+                          "EnableKeyboardSelections" : true,
+                          "EnableToolTips" : true,
+                          "Height" : 170,
+                          "HeightOfDropdownView" : 170,
+                          "Id" : "dhxlist-16",
+                          "Label" : "",
+                          "LabelAlignment" : "left",
+                          "Left" : 95,
+                          "ListBackgroundStyle" : "DefaultListBackgroundStyle",
+                          "ListFocusStyle" : "DefaultFocusStyle",
+                          "ListItemAlternateStyle" : "DefaultListItemAlternateStyle",
+                          "ListItemHoverStyle" : "DefaultListItemHoverStyle",
+                          "ListItemSelectedStyle" : "DefaultListItemSelectedStyle",
+                          "ListItemStyle" : "DefaultListItemStyle",
+                          "ListLabelStyle" : "DefaultWidgetLabelStyle",
+                          "MultiSelect" : false,
+                          "NumberOfItemsInDropdownView" : 6,
+                          "NumberOfItemsPerPage" : 500,
+                          "ResponsiveLayout" : true,
+                          "RowHeight" : 28,
+                          "ShowDataLoading" : true,
+                          "SingleClickSelectOnTablets" : false,
+                          "TabSequence" : -1,
+                          "TextIfNoSelectionType" : "editable",
+                          "TextVerticalAlignment" : 28,
+                          "ToolTipStyle" : "DefaultTooltipStyle",
+                          "Top" : 145,
+                          "Type" : "dhxlist",
+                          "ValueField" : "name",
+                          "View" : "radiolist",
+                          "Visible" : true,
+                          "Width" : 110,
+                          "WidthOfDropdownView" : 110,
+                          "Z-index" : 10,
+                          "__TypeDisplayName" : "List",
+                          "__supportsLabel" : true,
+                            "__supportsTooltip" : true,
+                            "isLocked" : false
+                        },
+                        "Widgets" : [ ]
+                      } ]
+                      } ]
+                    }, {
+                      "Properties" : {
+                        "Area" : "UI",
+                        "DisplayName" : "container-6",
+                        "Id" : "flexcontainer-6",
+                        "ResponsiveLayout" : true,
+                        "ShowDataLoading" : true,
+                        "Style" : "DefaultContainerStyle",
+                        "Type" : "flexcontainer",
+                        "UseTheme" : false,
+                        "Visible" : true,
+                        "Z-index" : 10,
+                        "__TypeDisplayName" : "Flex Container",
+                        "align-content" : "flex-start",
+                        "align-items" : "flex-start",
+                        "flex-basis" : "auto",
+                        "flex-direction" : "column",
+                        "flex-grow" : 1,
+                        "flex-height" : 0,
+                        "flex-shrink" : 0,
+                        "flex-width" : 0,
+                        "flex-wrap" : "nowrap",
+                        "iconClass" : "widgets-flexcontainer",
+                        "isLocked" : true,
+                        "justify-content" : "flex-start",
+                        "userCannotRemove" : false
+                      },
+                      "Widgets" : [ {
+                        "Properties" : {
+                          "Area" : "UI",
+                          "DisplayName" : "container-13",
+                          "Id" : "flexcontainer-13",
+                          "ResponsiveLayout" : true,
+                          "ShowDataLoading" : true,
+                          "Style" : "DefaultContainerStyle",
+                          "Type" : "flexcontainer",
+                          "UseTheme" : false,
+                          "Visible" : true,
+                          "Z-index" : 10,
+                          "__TypeDisplayName" : "Responsive Container",
+                          "align-content" : "flex-start",
+                          "align-items" : "center",
+                          "flex-basis" : "auto",
+                          "flex-direction" : "row",
+                          "flex-grow" : 0,
+                          "flex-height" : 44,
+                          "flex-shrink" : 0,
+                          "flex-width" : 0,
+                          "flex-wrap" : "nowrap",
+                          "iconClass" : "widgets-flexcontainer-fixed",
+                          "isLocked" : false,
+                          "justify-content" : "flex-start",
+                          "userCannotRemove" : false
+                        },
+                        "Widgets" : [ {
+                          "Properties" : {
+                            "Alignment" : "left",
+                            "AllowEllipsis" : false,
+                            "Area" : "UI",
+                            "Description" : "",
+                            "DisplayName" : "LabelTestSuite",
+                            "Height" : 22,
+                            "Id" : "label-17",
+                            "Left" : 105,
+                            "Margin" : "5",
+                            "ResponsiveLayout" : false,
+                            "ShowDataLoading" : true,
+                            "Style" : "DefaultLabelStyle",
+                            "Text" : "Selected Test Suite:",
+                            "ToolTipField" : "",
+                            "ToolTipStyle" : "DefaultTooltipStyle",
+                            "Top" : 25,
+                            "Type" : "label",
+                            "Visible" : true,
+                            "Width" : 110,
+                            "Z-index" : 10,
+                            "__TypeDisplayName" : "Label",
+                            "__supportsTooltip" : true
+                          },
+                          "Widgets" : [ ]
+                        }, {
+                          "Properties" : {
+                            "Alignment" : "left",
+                            "AllowEllipsis" : false,
+                            "Area" : "UI",
+                            "Description" : "",
+                            "DisplayName" : "label-18",
+                            "Height" : 22,
+                            "Id" : "label-18",
+                            "Left" : 105,
+                            "Margin" : "5",
+                            "ResponsiveLayout" : false,
+                            "ShowDataLoading" : true,
+                            "Style" : "DefaultLabelStyle",
+                            "Text" : "",
+                            "ToolTipField" : "",
+                            "ToolTipStyle" : "DefaultTooltipStyle",
+                            "Top" : 25,
+                            "Type" : "label",
+                            "Visible" : true,
+                            "Width" : 110,
+                            "Z-index" : 10,
+                            "__TypeDisplayName" : "Label",
+                            "__supportsTooltip" : true
+                          },
+                          "Widgets" : [ ]
+                        }, {
+                          "Properties" : {
+                            "ActiveStyle" : "DefaultButtonActiveStyle",
+                            "Area" : "UI",
+                            "CancelConfirmationButton" : "button2",
+                            "ConfirmationButton1Label" : "Yes",
+                            "ConfirmationButton2Label" : "No",
+                            "ConfirmationPrompt" : "Do Action?",
+                            "ConfirmationRequired" : false,
+                            "ConfirmationTitle" : "Confirm Action",
+                            "ContextId" : "",
+                            "DefaultConfirmationButton" : "button1",
+                            "Disabled" : false,
+                            "DisabledStyle" : "DefaultButtonDisabledStyle",
+                            "DisplayName" : "button-20",
+                            "FocusStyle" : "DefaultButtonFocusStyle",
+                            "Height" : 30,
+                            "HoverStyle" : "DefaultButtonHoverStyle",
+                            "IconAlignment" : "left",
+                            "Id" : "button-20",
+                            "Label" : "Run",
+                            "Left" : 565,
+                            "Margin" : "5",
+                            "ResponsiveLayout" : false,
+                            "RoundedCorners" : true,
+                            "ShowDataLoading" : true,
+                            "SingleClickSelectOnTablets" : true,
+                            "Style" : "DefaultButtonStyle",
+                            "TabSequence" : 0,
+                            "ToolTipField" : "",
+                            "ToolTipStyle" : "DefaultTooltipStyle",
+                            "Top" : 5,
+                            "Type" : "button",
+                            "Visible" : true,
+                            "Width" : 75,
+                            "Z-index" : 10,
+                            "__TypeDisplayName" : "Button",
+                            "__supportsTooltip" : true
+                          },
+                          "Widgets" : [ ]
+                        } ]
+                      }, {
+                        "Properties" : {
+                          "Area" : "UI",
+                          "DisplayName" : "container-12",
+                          "Id" : "flexcontainer-12",
+                          "ResponsiveLayout" : true,
+                          "ShowDataLoading" : true,
+                          "Style" : "DefaultContainerStyle",
+                          "Type" : "flexcontainer",
+                          "UseTheme" : false,
+                          "Visible" : true,
+                          "Z-index" : 10,
+                          "__TypeDisplayName" : "Flex Container",
+                          "align-content" : "flex-start",
+                          "align-items" : "flex-start",
+                          "flex-basis" : "auto",
+                          "flex-direction" : "row",
+                          "flex-grow" : 1,
+                          "flex-height" : 0,
+                          "flex-shrink" : 0,
+                          "flex-width" : 0,
+                          "flex-wrap" : "nowrap",
+                          "iconClass" : "widgets-flexcontainer",
+                          "isLocked" : true,
+                          "justify-content" : "flex-start",
+                          "userCannotRemove" : false
+                        },
+                        "Widgets" : [ {
+                          "Properties" : {
+                            "AlignHeader" : false,
+                            "Area" : "UI",
+                            "AutoSelectFirstRow" : false,
+                            "CellTextWrapping" : false,
+                            "ColumnFormat" : {
+                              "formatInfo" : [ {
+                                "Align" : "left",
+                                "AllowEdit" : false,
+                                "FieldName" : "testSuite",
+                                "FormatOptions" : {
+                                  "FormatString" : "full",
+                                  "formatInfo" : {
+                                    "FieldName" : "",
+                                    "StateDefinition" : "",
+                                    "StateDefinitionType" : "fixed",
+                                    "StateFormats" : [ {
+                                      "state" : "",
+                                      "stateName" : "fixed"
+                                    } ]
+                                  },
+                                  "renderer" : "STRING",
+                                  "roundingEnabled" : true
+                                },
+                                "Title" : "testSuite",
+                                "ValidationExpression" : "",
+                                "ValidationMessage" : "",
+                                "Width" : "auto"
+                              }, {
+                                "Align" : "left",
+                                "AllowEdit" : false,
+                                "FieldName" : "testCase",
+                                "FormatOptions" : {
+                                  "FormatString" : "full",
+                                  "formatInfo" : {
+                                    "FieldName" : "",
+                                    "StateDefinition" : "",
+                                    "StateDefinitionType" : "fixed",
+                                    "StateFormats" : [ {
+                                      "state" : "",
+                                      "stateName" : "fixed"
+                                    } ]
+                                  },
+                                  "renderer" : "STRING",
+                                  "roundingEnabled" : true
+                                },
+                                "Title" : "testCase",
+                                "ValidationExpression" : "",
+                                "ValidationMessage" : "",
+                                "Width" : "120"
+                              }, {
+                                "Align" : "left",
+                                "AllowEdit" : false,
+                                "FieldName" : "state",
+                                "FormatOptions" : {
+                                  "FormatString" : "full",
+                                  "formatInfo" : {
+                                    "FieldName" : "state",
+                                    "StateDefinition" : "TWXUnitState",
+                                    "StateDefinitionType" : "string",
+                                    "StateFormats" : [ {
+                                      "comparator" : "==",
+                                      "state" : "TWXUnit.Failure2",
+                                      "stateName" : "",
+                                      "value" : "Failure"
+                                    }, {
+                                      "comparator" : "==",
+                                      "state" : "TWXUnit.Success2",
+                                      "stateName" : "",
+                                      "value" : "Success"
+                                    }, {
+                                      "state" : "DefaultContainerStyle",
+                                      "stateName" : ""
+                                    } ]
+                                  },
+                                  "renderer" : "STRING",
+                                  "roundingEnabled" : true
+                                },
+                                "Title" : "state",
+                                "ValidationExpression" : "",
+                                "ValidationMessage" : "",
+                                "Width" : "120"
+                              }, {
+                                "Align" : "left",
+                                "AllowEdit" : false,
+                                "FieldName" : "description",
+                                "FormatOptions" : {
+                                  "FormatString" : "full",
+                                  "formatInfo" : {
+                                    "FieldName" : "",
+                                    "StateDefinition" : "",
+                                    "StateDefinitionType" : "fixed",
+                                    "StateFormats" : [ {
+                                      "state" : "",
+                                      "stateName" : "fixed"
+                                    } ]
+                                  },
+                                  "renderer" : "STRING",
+                                  "roundingEnabled" : true
+                                },
+                                "Title" : "description",
+                                "ValidationExpression" : "",
+                                "ValidationMessage" : "",
+                                "Width" : "auto"
+                              }, {
+                                "Align" : "left",
+                                "AllowEdit" : false,
+                                "FieldName" : "duration",
+                                "FormatOptions" : {
+                                  "FormatString" : "0",
+                                  "formatInfo" : {
+                                    "FieldName" : "",
+                                    "StateDefinition" : "",
+                                    "StateDefinitionType" : "fixed",
+                                    "StateFormats" : [ {
+                                      "state" : "",
+                                      "stateName" : "fixed"
+                                    } ]
+                                  },
+                                  "renderer" : "INTEGER",
+                                  "roundingEnabled" : true
+                                },
+                                "Title" : "duration",
+                                "ValidationExpression" : "",
+                                "ValidationMessage" : "",
+                                "Width" : "auto"
+                              }, {
+                                "Align" : "left",
+                                "AllowEdit" : false,
+                                "FieldName" : "runAs",
+                                "FormatOptions" : {
+                                  "FormatString" : "text",
+                                  "formatInfo" : {
+                                    "FieldName" : "",
+                                    "StateDefinition" : "",
+                                    "StateDefinitionType" : "fixed",
+                                    "StateFormats" : [ {
+                                      "state" : "",
+                                      "stateName" : "fixed"
+                                    } ]
+                                  },
+                                  "renderer" : "USERNAME",
+                                  "roundingEnabled" : true
+                                },
+                                "Title" : "runAs",
+                                "ValidationExpression" : "",
+                                "ValidationMessage" : "",
+                                "Width" : "auto"
+                              }, {
+                                "Align" : "left",
+                                "AllowEdit" : false,
+                                "FieldName" : "result",
+                                "FormatOptions" : {
+                                  "FormatString" : "full",
+                                  "formatInfo" : {
+                                    "FieldName" : "",
+                                    "StateDefinition" : "",
+                                    "StateDefinitionType" : "fixed",
+                                    "StateFormats" : [ {
+                                      "state" : "",
+                                      "stateName" : "fixed"
+                                    } ]
+                                  },
+                                  "renderer" : "STRING",
+                                  "roundingEnabled" : true
+                                },
+                                "Title" : "result",
+                                "ValidationExpression" : "",
+                                "ValidationMessage" : "",
+                                "Width" : "auto"
+                              } ]
+                            },
+                            "CurrentScrollTop" : 0,
+                            "DisplayName" : "dhxgrid-22",
+                            "FocusStyle" : "DefaultFocusStyle",
+                            "GridBackgroundStyle" : "DefaultGridBackgroundStyle",
+                            "GridEditableFieldStyle" : "DefaultGridEditableFieldStyle",
+                            "GridHeaderStyle" : "DefaultGridHeaderStyle",
+                            "GridHeaderTextCase" : "capitalize",
+                            "GridInvalidFieldStyle" : "DefaultGridInvalidFieldStyle",
+                            "Height" : 200,
+                            "Id" : "dhxgrid-22",
+                            "IsEditable" : false,
+                            "IsPrintLayout" : false,
+                            "Left" : 135,
+                            "MultiSelect" : false,
+                            "ResponsiveLayout" : true,
+                            "RowAlternateBackgroundStyle" : "DefaultRowAlternateBackgroundStyle",
+                            "RowBackgroundStyle" : "DefaultRowBackgroundStyle",
+                            "RowFormat_StateParameters" : [ ],
+                            "RowHeight" : 30,
+                            "RowHoverStyle" : "DefaultRowHoverStyle",
+                            "RowSelectedStyle" : "DefaultRowSelectedStyle",
+                            "ScrollTop" : 0,
+                            "ShowAllColumns" : false,
+                            "ShowDataLoading" : true,
+                            "TabSequence" : 0,
+                            "Top" : 95,
+                            "Type" : "dhxgrid",
+                            "Visible" : true,
+                            "Width" : 400,
+                            "Z-index" : 10,
+                            "__TypeDisplayName" : "Grid"
+                          },
+                          "Widgets" : [ ]
+                        } ]
+                      } ]
+                    } ]
+                  } ]
+                } ]
+              },
+              "mashupType" : "mashup"
+            }
+            ]]>
+			</mashupContent>
+			<preview></preview>
+		</Mashup>
+	</Mashups>
+</Entities>

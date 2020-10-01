@@ -1,0 +1,8 @@
+<Entities>
+    <ThingPackages>
+        <ThingPackage className="twx.unit.TwxUnitExecutor" name="TwxUnitExecutor"/>
+    </ThingPackages>
+    <ThingTemplates>
+        <ThingTemplate aspect.isEditableExtensionObject="true" name="TwxUnitExecutor" thingPackage="TwxUnitExecutor"/>
+    </ThingTemplates>
+</Entities>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entities>
+	<ModelTags>
+		<ModelTagVocabulary aspect.isEditableExtensionObject="true" name="TWX_Unit" projectName="TWX_Unit">
+			<DesignTimePermissions>
+				<Create/>
+				<Read/>
+				<Update/>
+				<Delete/>
+				<Metadata/>
+			</DesignTimePermissions>
+			<RunTimePermissions/>
+			<VisibilityPermissions>
+				<Visibility/>
+			</VisibilityPermissions>
+			<ConfigurationTableDefinitions/>
+			<ConfigurationTables/>
+			<VocabularyTerm description="" name="Core"/>
+			<VocabularyTerm description="" name="Test"/>
+		</ModelTagVocabulary>
+	</ModelTags>
+</Entities>

@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities>
+    <ThingShapes>
+        <ThingShape
+                aspect.isEditableExtensionObject="true"
+                className=""
+                description=""
+                documentationContent=""
+                homeMashup=""
+                name="TestUtilities"
+                projectName="TWX_Unit"
+                tags="TWX_Unit:Core">
+            <PropertyDefinitions />
+            <ServiceDefinitions>
+                <ServiceDefinition
+                        aspect.isAsync="false"
+                        category=""
+                        description=""
+                        isAllowOverride="false"
+                        isLocalOnly="false"
+                        isOpen="false"
+                        isPrivate="false"
+                 name="QueryProjects">
+                    <ResultType
+                     aspect.dataShape="RootEntityList"
+                     baseType="INFOTABLE"
+                     description=""
+                     name="result"
+                     ordinal="0"></ResultType>
+                    <ParameterDefinitions></ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition
+                 aspect.isAsync="false"
+                 category=""
+                 description=""
+                 isAllowOverride="false"
+                 isLocalOnly="false"
+                 isOpen="false"
+                 isPrivate="false"
+                 name="QueryTestCases">
+                    <ResultType
+                     aspect.dataShape="TestExecution"
+                     baseType="INFOTABLE"
+                     description=""
+                     name="result"
+                     ordinal="0"></ResultType>
+                    <ParameterDefinitions>
+                        <FieldDefinition
+                         baseType="STRING"
+                         description=""
+                         name="testSuite"
+                         ordinal="1"></FieldDefinition>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition
+                 aspect.isAsync="false"
+                 category=""
+                 description=""
+                 isAllowOverride="true"
+                 isLocalOnly="false"
+                 isOpen="false"
+                 isPrivate="false"
+                        name="QueryTestSuites">
+                    <ResultType
+                            aspect.dataShape="RootEntityList"
+                            baseType="INFOTABLE"
+                            description=""
+                            name="result"
+                     ordinal="0"></ResultType>
+                    <ParameterDefinitions>
+                        <FieldDefinition
+                         aspect.defaultValue=""
+                         baseType="STRING"
+                         description=""
+                         name="ProjectName"
+                         ordinal="1"></FieldDefinition>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+            </ServiceDefinitions>
+            <EventDefinitions></EventDefinitions>
+            <ServiceMappings></ServiceMappings>
+            <ServiceImplementations>
+                <ServiceImplementation
+                        description=""
+                        handlerName="Script"
+                 name="QueryProjects">
+                    <ConfigurationTables>
+                        <ConfigurationTable
+                         description=""
+                         isMultiRow="false"
+                         name="Script"
+                         ordinal="0">
+                            <DataShape>
+                                <FieldDefinitions>
+                                    <FieldDefinition
+                                     baseType="STRING"
+                                     description="code"
+                                     name="code"
+                                     ordinal="0"></FieldDefinition>
+                                </FieldDefinitions>
+                            </DataShape>
+                            <Rows>
+                                <Row>
+                                    <code>
+                                    <![CDATA[
+                                    /*************************************************************
+                                     *	Service query all Projects containint Test Cases & Suites ...
+                                     *	auhor:	a.tondorf
+                                     *	date:	6.9.2019
+                                     */
+                                    // Create the result infotable ...
+                                    var params = {
+                                    	infoTableName : "InfoTable",
+                                    	dataShapeName : "RootEntityList"
+                                    };
+                                    var result = Resources["InfoTableFunctions"].CreateInfoTableFromDataShape(params);
+                                    
+                                    var projectList = "";
+                                    
+                                    var testSuites = me.QueryTestSuites();
+                                    
+                                    // RootEntityList entry object
+                                    var newEntry = new Object();
+                                    newEntry.isSystemObject = undefined; // BOOLEAN
+                                    newEntry.name = ""; // STRING - isPrimaryKey = true
+                                    newEntry.description = undefined; // STRING
+                                    newEntry.homeMashup = undefined; // MASHUPNAME
+                                    newEntry.avatar = undefined; // IMAGELINK
+                                    newEntry.tags = undefined; // TAGS
+                                    result.AddRow(newEntry);
+                                    
+                                    for(var i = 0; i < testSuites.getRowCount(); i++) {
+                                        var row = testSuites.getRow(i);
+                                        var projectName = Things[row.name].GetProjectName();
+                                        if(projectList.indexOf("-" + projectName + "-") < 0) {
+                                            projectList = projectList + "-" + projectName + "-";
+                                            var newEntry = new Object();
+                                            newEntry.isSystemObject = undefined; // BOOLEAN
+                                            newEntry.name = projectName; // STRING - isPrimaryKey = true
+                                            newEntry.description = undefined; // STRING
+                                            newEntry.homeMashup = undefined; // MASHUPNAME
+                                            newEntry.avatar = undefined; // IMAGELINK
+                                            newEntry.tags = undefined; // TAGS
+                                            result.AddRow(newEntry);
+                                        }
+                                    }
+                                    
+                                    var sort = new Object();
+                                    sort.name = "name";
+                                    sort.ascending = true;
+                                    result.Sort(sort);
+                                    ]]>
+                                    </code>
+                                </Row>
+                            </Rows>
+                        </ConfigurationTable>
+                    </ConfigurationTables>
+                </ServiceImplementation>
+                <ServiceImplementation
+                 description=""
+                 handlerName="Script"
+                 name="QueryTestCases">
+                    <ConfigurationTables>
+                        <ConfigurationTable
+                         description=""
+                         isMultiRow="false"
+                         name="Script"
+                         ordinal="0">
+                            <DataShape>
+                                <FieldDefinitions>
+                                    <FieldDefinition
+                                     baseType="STRING"
+                                     description="code"
+                                     name="code"
+                                     ordinal="0"></FieldDefinition>
+                                </FieldDefinitions>
+                            </DataShape>
+                            <Rows>
+                                <Row>
+                                    <code>
+                                    <![CDATA[
+                                    /*************************************************************
+                                     *	Service query all Projects containint Test Cases & Suites ...
+                                     *	auhor:	a.tondorf
+                                     *	date:	6.9.2019
+                                     */
+                                    var result = Resources["InfoTableFunctions"].CreateInfoTableFromDataShape({ dataShapeName : "TestExecution" });
+                                    try {
+                                     	var caseList =  me.PreviewExecutionPlan({
+                                    		testSuite: testSuite,
+                                    		defaultRunAs: undefined
+                                    	});  
+                                        
+                                        for(var i = 0; i < caseList.getRowCount(); i++ ) {
+                                        	var row = caseList.getRow(i);
+                                            // TestExecution entry object
+                                    		var newEntry = new Object();
+                                       		newEntry.testSuite = row.testSuite; 
+                                            newEntry.testCase = row.testCase;
+                                            
+                                    		result.AddRow(newEntry);
+                                        }
+                                        var sort = new Object();
+                                    	sort.name = "testSuite";
+                                    	sort.ascending = true;
+                                    	result.Sort(sort);
+                                    }
+                                    catch( ex ) {
+                                    	logger.error("Error: " + me.name + ".QueryTestCases" + " - " + ex.message);
+                                    }
+                                    ]]>
+                                    </code>
+                                </Row>
+                            </Rows>
+                        </ConfigurationTable>
+                    </ConfigurationTables>
+                </ServiceImplementation>
+                <ServiceImplementation
+                 description=""
+                 handlerName="Script"
+                        name="QueryTestSuites">
+                    <ConfigurationTables>
+                        <ConfigurationTable
+                                description=""
+                                isMultiRow="false"
+                                name="Script"
+                                ordinal="0">
+                            <DataShape>
+                                <FieldDefinitions>
+                                    <FieldDefinition
+                                            baseType="STRING"
+                                            description="code"
+                                            name="code"
+                                     ordinal="0"></FieldDefinition>
+                                    <FieldDefinition
+                                            baseType="JSON"
+                                            description=""
+                                            name="editorSettings"
+                                     ordinal="0"></FieldDefinition>
+                                </FieldDefinitions>
+                            </DataShape>
+                            <Rows>
+                                <Row>
+                                    <code>
+                                        <![CDATA[
+                                    /*************************************************************
+                                     *	Service query all Test Suites ...
+                                     *	auhor:	a.tondorf
+                                     *	date:	6.9.2019
+                                     */
+                                    // Create the result infotable ...
+                                    var params = {
+                                    	infoTableName : "InfoTable",
+                                    	dataShapeName : "RootEntityList"
+                                    };
+                                    var result = Resources["InfoTableFunctions"].CreateInfoTableFromDataShape(params);
+                                    
+                                    // query all HasTestSuites & Cases ... 
+                                    var testCases = ThingShapes["HasTestCases"].GetImplementingThings();
+                                    var testSuites = ThingShapes["HasTestSuite"].GetImplementingThings();
+                                    var params = {
+                                        t1: testCases /* INFOTABLE */,
+                                        t2: testSuites /* INFOTABLE */
+                                    };
+                                    var testThings = Resources["InfoTableFunctions"].Union(params);
+                                    
+                                    // filter if Project Name is given ... 
+                                    if( ProjectName && ProjectName.trim().length > 0 ) {
+                                    	// RootEntityList entry object
+                                        var newEntry = new Object();
+                                        newEntry.isSystemObject = undefined; // BOOLEAN
+                                        newEntry.name = ""; // STRING - isPrimaryKey = true
+                                        newEntry.description = "-"; // STRING
+                                        newEntry.homeMashup = undefined; // MASHUPNAME
+                                        newEntry.avatar = undefined; // IMAGELINK
+                                        newEntry.tags = undefined; // TAGS
+                                    
+                                        for(var i = 0; i < testThings.getRowCount(); i++) {
+                                            var row = testThings.getRow(i);
+                                            if(Things[row.name].GetProjectName() === ProjectName) {
+                                    			result.AddRow(row);
+                                            }
+                                        }
+                                        var sort = new Object();
+                                        sort.name = "name";
+                                        sort.ascending = true;
+                                        result.Sort(sort);
+                                    } else {
+                                    	result = testThings;
+                                    }
+                                    ]]>
+                                    </code>
+                                    <editorSettings>
+                                        <json>
+                                            <![CDATA[
+                                        {"viewState":{"viewState":{"firstPositionDeltaTop":0,"scrollLeft":0,"firstPosition":{"column":1,"lineNumber":1}},"cursorState":[{"inSelectionMode":false,"selectionStart":{"column":1,"lineNumber":10},"position":{"column":1,"lineNumber":10}}],"contributionsState":{"editor.contrib.wordHighlighter":false,"editor.contrib.folding":{"provider":"indent","lineCount":10}}}}
+                                        ]]>
+                                        </json>
+                                    </editorSettings>
+                                </Row>
+                            </Rows>
+                        </ConfigurationTable>
+                    </ConfigurationTables>
+                </ServiceImplementation>
+            </ServiceImplementations>
+            <Subscriptions />
+            <avatar />
+            <DesignTimePermissions>
+                <Create />
+                <Read />
+                <Update />
+                <Delete />
+                <Metadata />
+            </DesignTimePermissions>
+            <RunTimePermissions />
+            <VisibilityPermissions>
+                <Visibility />
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions />
+            <ConfigurationTables />
+            <PropertyBindings />
+            <RemotePropertyBindings />
+            <RemoteServiceBindings />
+            <RemoteEventBindings />
+            <AlertConfigurations />
+            <InstanceRunTimePermissions />
+        </ThingShape>
+    </ThingShapes>
+</Entities>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ build="b45"
+ majorVersion="8"
+ minorVersion="4"
+ modelPersistenceProviderPackage="H2PersistenceProviderPackage"
+ revision="9"
+ schemaVersion="1044"
+ universal="">
+    <StateDefinitions>
+        <StateDefinition
+         description=""
+         documentationContent=""
+         homeMashup=""
+
+         name="TWXUnitState"
+         projectName="TWX_Unit"
+         tags="TWX_Unit:Core">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read></Read>
+                <Update></Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions></RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility></Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <content>
+            <![CDATA[
+            {
+              "stateDefinitions" : [ {
+                "defaultStyleDefinition" : "TWXUnit.Failure",
+                "defaultValue" : "Failure",
+                "description" : "",
+                "displayString" : "",
+                "name" : ""
+              }, {
+                "defaultStyleDefinition" : "TWXUnit.Success",
+                "defaultValue" : "Success",
+                "description" : "",
+                "displayString" : "",
+                "name" : ""
+              }, {
+                "defaultStyleDefinition" : "DefaultContainerStyle",
+                "description" : "",
+                "displayString" : "",
+                "name" : ""
+              } ],
+              "stateType" : "string"
+            }
+            ]]>
+            </content>
+        </StateDefinition>
+    </StateDefinitions>
+</Entities>

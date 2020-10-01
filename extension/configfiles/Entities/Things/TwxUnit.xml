@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entities>
+    <Things>
+        <Thing
+                aspect.isEditableExtensionObject="true"
+                description=""
+                documentationContent=""
+                effectiveThingPackage="TwxUnitExecutor"
+                enabled="true"
+                homeMashup=""
+                identifier=""
+                name="TwxUnit"
+                projectName="TWX_Unit"
+                tags="TWX_Unit:Core"
+                published="false"
+                thingTemplate="TwxUnitExecutor"
+                valueStream="">
+            <ConfigurationTableDefinitions />
+            <ConfigurationTables>
+                <ConfigurationTable
+                        description=""
+                        isMultiRow="false"
+                        name="LocalClientConfiguration"
+                        ordinal="0">
+                    <DataShape>
+                        <FieldDefinitions>
+                            <FieldDefinition
+                                    baseType="STRING"
+                                    description=""
+                                    name="appKeyName"
+                                    ordinal="0" />
+                            <FieldDefinition
+                                    baseType="STRING"
+                                    description=""
+                                    name="url"
+                                    ordinal="0" />
+                        </FieldDefinitions>
+                    </DataShape>
+                    <Rows>
+                        <Row>
+                            <appKeyName />
+                            <url />
+                        </Row>
+                    </Rows>
+                </ConfigurationTable>
+            </ConfigurationTables>
+            <ImplementedShapes>
+                <ImplementedShape
+                        name="TestUtilities"
+                        type="ThingShape"></ImplementedShape>
+            </ImplementedShapes>
+        </Thing>
+    </Things>
+</Entities>

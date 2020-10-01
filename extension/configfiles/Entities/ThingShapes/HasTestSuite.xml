@@ -1,0 +1,6 @@
+<Entities>
+    <ThingShapes>
+        <ThingShape aspect.isEditableExtensionObject="false" className="twx.unit.HasTestSuite" description=""
+                    name="HasTestSuite" projectName="TWX_Unit" tags="TWX_Unit:Core"/>
+    </ThingShapes>
+</Entities>

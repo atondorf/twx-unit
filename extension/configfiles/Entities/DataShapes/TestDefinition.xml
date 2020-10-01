@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Entities>
+    <DataShapes>
+        <DataShape
+                name="TestDefinition"
+                projectName="TWX_Unit"
+                tags="TWX_Unit:Core">
+            <FieldDefinitions>
+                <FieldDefinition
+                        aspect.isPrimaryKey="true"
+                        baseType="STRING"
+                        description="Complete test case name, including all parent test suites"
+                        name="id"
+                        ordinal="1" />
+                <FieldDefinition
+                        baseType="THINGNAME"
+                        description="Direct test suite name, i.e. thing name"
+                        name="testSuite"
+                        ordinal="2" />
+                <FieldDefinition
+                        baseType="STRING"
+                        description="Test case name, i.e. service name"
+                        name="testCase"
+                        ordinal="3" />
+                <FieldDefinition
+                        baseType="STRING"
+                        description="Description of the service"
+                        name="description"
+                        ordinal="4" />
+                <FieldDefinition
+                        baseType="USERNAME"
+                        description="Specifies a default user, under which this test case is executed. Can be overridden by the Run() service parameter."
+                        name="runAs"
+                        ordinal="5" />
+                <FieldDefinition
+                        baseType="STRING"
+                        description="List of remote things that need to be connected before starting this test"
+                        name="remoteThings"
+                        ordinal="6" />
+            </FieldDefinitions>
+        </DataShape>
+    </DataShapes>
+</Entities>

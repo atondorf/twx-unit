@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ build="b45"
+ majorVersion="8"
+ minorVersion="4"
+ modelPersistenceProviderPackage="H2PersistenceProviderPackage"
+ revision="9"
+ schemaVersion="1044"
+ universal="">
+    <StyleDefinitions>
+        <StyleDefinition
+         name="TWXUnit.Failure"
+         projectName="TWX_Unit"
+         tags="TWX_Unit:Core">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read></Read>
+                <Update></Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions></RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility></Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <content>
+            <![CDATA[
+            {
+              "backgroundColor" : "rgba(191,48,48,1)",
+              "displayString" : "",
+              "fontEmphasisBold" : true,
+              "fontEmphasisItalic" : true,
+              "fontEmphasisUnderline" : false,
+              "foregroundColor" : "",
+              "image" : "",
+              "lineColor" : "",
+              "lineStyle" : "solid",
+              "lineThickness" : 1,
+              "secondaryBackgroundColor" : "rgba(191,48,48,1)",
+              "textSize" : "small"
+            }
+            ]]>
+            </content>
+        </StyleDefinition>
+    </StyleDefinitions>
+</Entities>
